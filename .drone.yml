@@ -1,7 +1,7 @@
 clone:
   tags: true
 build:
-  images: 'ubuntu:14.04'
+  image: ubuntu:14.04
   commands:
     - dpkg-buildpackage
 
