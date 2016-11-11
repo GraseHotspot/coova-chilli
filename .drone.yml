@@ -1,0 +1,20 @@
+clone:
+  tags: true
+build:
+  images: 'ubuntu:14.04'
+  commands:
+    - dpkg-buildpackage
+
+
+publish:
+  sftp:
+    host: $$SFTP_HOST
+    username: artifacts
+    password: $$SFTP_PASSWORD
+    files:
+      - './build-area/*.deb'
+      - './build-area/*.build'
+      - './build-area/*.changes'
+      - './build-area/*.dsc'
+      - './build-area/*.tar.xz'
+    destination_path: /home/artifacts/coova-chilli/
