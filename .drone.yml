@@ -1,15 +1,9 @@
 clone:
   tags: true
 build:
-  trusty:
-    image: grase/build-images:trusty
-    commands:
-      - dpkg-buildpackage
-  jessie:
-    image: grase/build-images:jessie
-    commands:
-      - dpkg-buildpackage
-
+  image: grase/build-images:$$PLATFORM
+  commands:
+    - dpkg-buildpackage
 
 
 publish:
@@ -23,4 +17,9 @@ publish:
       - '../*.changes'
       - '../*.dsc'
       - '../*.tar.xz'
-    destination_path: /home/artifacts/coova-chilli/
+    destination_path: /home/artifacts/coova-chilli/$$PLATFORM/
+
+matrix:
+  PLATFORM:
+    - trusty
+    - jessie
