@@ -20,12 +20,12 @@ config.status: configure
 	CFLAGS="$(CFLAGS)" ./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) \
 	--prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
 	--sysconfdir=/etc --localstatedir=/var --enable-largelimits \
-	--enable-proxyvsa --enable-miniportal --enable-chilliredir \
+	--enable-proxyvsa --enable-chilliredir \
 	--enable-chilliproxy --enable-binstatusfile --enable-chilliscript \
 	--enable-chilliradsec --enable-layer3 --enable-eapol \
 	--enable-uamdomainfile --enable-redirdnsreq --enable-modules \
 	--enable-multiroute --enable-extadmvsa --with-openssl --with-poll \
-	--enable-json --enable-libjson
+	--enable-json --enable-libjson --enable-gardenaccounting
 
 configure:
 	@test -f configure || ./bootstrap
