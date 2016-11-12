@@ -1,9 +1,15 @@
 clone:
   tags: true
 build:
-  image: grase/build-images:trusty
-  commands:
-    - dpkg-buildpackage
+  trusty:
+    image: grase/build-images:trusty
+    commands:
+      - dpkg-buildpackage
+  jessie:
+    image: grase/build-images:jessie
+    commands:
+      - dpkg-buildpackage
+
 
 
 publish:
@@ -12,9 +18,9 @@ publish:
     username: artifacts
     password: $$SFTP_PASSWORD
     files:
-      - './build-area/*.deb'
-      - './build-area/*.build'
-      - './build-area/*.changes'
-      - './build-area/*.dsc'
-      - './build-area/*.tar.xz'
+      - '../*.deb'
+      - '../*.build'
+      - '../*.changes'
+      - '../*.dsc'
+      - '../*.tar.xz'
     destination_path: /home/artifacts/coova-chilli/
