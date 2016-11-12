@@ -1,7 +1,7 @@
 clone:
   tags: true
 build:
-  image: ubuntu:14.04
+  image: grase/build-images:trusty
   commands:
     - dpkg-buildpackage
 
