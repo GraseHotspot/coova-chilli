@@ -1,3 +1,4 @@
 START_CHILLI=1
 CONFFILE="/etc/chilli.conf"
-HS_USER="chilli"
+# TODO investigate if we can run as Chilli again
+#HS_USER="chilli"
