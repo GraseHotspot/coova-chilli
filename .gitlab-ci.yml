@@ -4,7 +4,7 @@ jessie-amd64:
   script:
     - dpkg-buildpackage
     - mkdir artifacts
-    - mv -v ../coova-chilli* artifacts/
+    - mv -v ../coova-chilli_* artifacts/
   artifacts:
     paths:
       - artifacts/
@@ -15,7 +15,7 @@ trusty-amd64:
   script:
     - dpkg-buildpackage
     - mkdir artifacts
-    - mv -v ../coova-chilli* artifacts/
+    - mv -v ../coova-chilli_* artifacts/
   artifacts:
     paths:
       - artifacts/
@@ -27,7 +27,7 @@ jessie-i386:
   script:
     - DPKG_ROOT=$I386_ROOT LDFLAGS="-m32 --sysroot=$I386_ROOT" CPPFLAGS="-m32 --sysroot=$I386_ROOT" dpkg-buildpackage -uc -us -a i386 -B -d
     - mkdir artifacts
-    - mv -v ../coova-chilli* artifacts/
+    - mv -v ../coova-chilli_* artifacts/
   artifacts:
     paths:
       - artifacts/
@@ -38,7 +38,7 @@ jessie-armhf:
   script:
     - DPKG_ROOT=$ARM_ROOT LDFLAGS=--sysroot=$ARM_ROOT CPPFLAGS=--sysroot=$ARM_ROOT dpkg-buildpackage -uc -us -a armhf -B -d
     - mkdir artifacts
-    - mv -v ../coova-chilli* artifacts/
+    - mv -v ../coova-chilli_* artifacts/
   artifacts:
     paths:
       - artifacts/
@@ -49,7 +49,7 @@ jessie-raspbian:
   script:
     - DPKG_ROOT=$RPI_ROOT LDFLAGS=--sysroot=$RPI_ROOT CPPFLAGS=--sysroot=$RPI_ROOT dpkg-buildpackage -uc -us -a armhf -B -d
     - mkdir artifacts
-    - mv -v ../coova-chilli* artifacts/
+    - mv -v ../coova-chilli_* artifacts/
   artifacts:
     paths:
       - artifacts/
