@@ -68,7 +68,7 @@ binary-arch: build install
 ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
 	dh_strip
 endif
-	dh_compress
+	dh_compress -Xdictionary -Xattributes
 	dh_fixperms
 	dh_makeshlibs
 	dh_installdeb
@@ -78,4 +78,4 @@ endif
 	dh_builddeb
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install 
+.PHONY: build clean binary-indep binary-arch binary install
