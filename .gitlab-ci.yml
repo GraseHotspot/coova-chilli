@@ -23,11 +23,9 @@ trusty-amd64:
 
 
 jessie-i386:
-  image: dovetailautomata/docker-cross-builder
+  image: grase/build-images:jessie
   script:
-    - apt-get -y install gengetopt libssl-dev libjson0-dev
-    - mkdir -p /home/travis/.ccache
-    - DPKG_ROOT=$I386_ROOT LDFLAGS="-m32 --sysroot=$I386_ROOT" CPPFLAGS="-m32 --sysroot=$I386_ROOT" dpkg-buildpackage -uc -us -a i386 -B -d
+    - dpkg-buildpackage -ai386 -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
   artifacts:
@@ -36,9 +34,9 @@ jessie-i386:
     expire_in: 1 week
 
 jessie-armhf:
-  image: dovetailautomata/docker-cross-builder
+  image: grase/build-images:jessie
   script:
-    - DPKG_ROOT=$ARM_ROOT LDFLAGS=--sysroot=$ARM_ROOT CPPFLAGS=--sysroot=$ARM_ROOT dpkg-buildpackage -uc -us -a armhf -B -d
+    - dpkg-buildpackage -aarmhf -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
   artifacts:
@@ -46,10 +44,10 @@ jessie-armhf:
       - artifacts/
     expire_in: 1 week
 
-jessie-raspbian:
-  image: dovetailautomata/docker-cross-builder
+jessie-armel:
+  image: grase/build-images:jessie
   script:
-    - DPKG_ROOT=$RPI_ROOT LDFLAGS=--sysroot=$RPI_ROOT CPPFLAGS=--sysroot=$RPI_ROOT dpkg-buildpackage -uc -us -a armhf -B -d
+    - dpkg-buildpackage -aarmel -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
   artifacts:
