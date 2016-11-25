@@ -25,6 +25,8 @@ trusty-amd64:
 jessie-i386:
   image: dovetailautomata/docker-cross-builder
   script:
+    - apt-get -y install gengetopt libssl-dev libjson0-dev
+    - mkdir -p /home/travis/.ccache
     - DPKG_ROOT=$I386_ROOT LDFLAGS="-m32 --sysroot=$I386_ROOT" CPPFLAGS="-m32 --sysroot=$I386_ROOT" dpkg-buildpackage -uc -us -a i386 -B -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
