@@ -1,7 +1,7 @@
 .build_template: &build_definition
   stage: build
   script:
-    - dch -v $(git describe |tr '-' '.')~$(lsb_release -cs) -b ""
+    - dch -v $(git describe --tags |tr '-' '.')~$(lsb_release -cs) -b ""
     - dpkg-buildpackage
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
