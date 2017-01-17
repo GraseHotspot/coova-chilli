@@ -26,6 +26,7 @@ jessie-i386:
   <<: *build_definition
   image: grase/build-images:jessie
   script:
+    - dch -v $(git describe --tags |tr '-' '.')~$(lsb_release -cs) -b ""
     - dpkg-buildpackage -ai386 -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
@@ -34,6 +35,7 @@ jessie-armhf:
   <<: *build_definition
   image: grase/build-images:jessie
   script:
+    - dch -v $(git describe --tags |tr '-' '.')~$(lsb_release -cs) -b ""
     - dpkg-buildpackage -aarmhf -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
@@ -42,6 +44,7 @@ jessie-armel:
   <<: *build_definition
   image: grase/build-images:jessie
   script:
+    - dch -v $(git describe --tags |tr '-' '.')~$(lsb_release -cs) -b ""
     - dpkg-buildpackage -aarmel -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
