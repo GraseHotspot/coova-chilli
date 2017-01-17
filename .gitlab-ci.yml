@@ -1,69 +1,47 @@
+.build_template: &build_definition
+  stage: build
+  script:
+    - dch -v $(git describe |tr '-' '.')~$(lsb_release -cs) -b ""
+    - dpkg-buildpackage
+    - mkdir artifacts
+    - mv -v ../coova-chilli_* artifacts/
+  artifacts:
+    paths:
+      - artifacts/
+    expire_in: 1 week
 
 jessie-amd64:
+  <<: *build_definition
   image: grase/build-images:jessie
-  script:
-    - dpkg-buildpackage
-    - mkdir artifacts
-    - mv -v ../coova-chilli_* artifacts/
-  artifacts:
-    paths:
-      - artifacts/
-    expire_in: 1 week
 
 trusty-amd64:
+  <<: *build_definition
   image: grase/build-images:trusty
-  script:
-    - dpkg-buildpackage
-    - mkdir artifacts
-    - mv -v ../coova-chilli_* artifacts/
-  artifacts:
-    paths:
-      - artifacts/
-    expire_in: 1 week
 
 xenial-amd64:
+  <<: *build_definition
   image: grase/build-images:xenial
-  script:
-    - dpkg-buildpackage
-    - mkdir artifacts
-    - mv -v ../coova-chilli_* artifacts/
-  artifacts:
-    paths:
-      - artifacts/
-    expire_in: 1 week
-
-
-
 
 jessie-i386:
+  <<: *build_definition
   image: grase/build-images:jessie
   script:
     - dpkg-buildpackage -ai386 -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
-  artifacts:
-    paths:
-      - artifacts/
-    expire_in: 1 week
 
 jessie-armhf:
+  <<: *build_definition
   image: grase/build-images:jessie
   script:
     - dpkg-buildpackage -aarmhf -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
-  artifacts:
-    paths:
-      - artifacts/
-    expire_in: 1 week
 
 jessie-armel:
+  <<: *build_definition
   image: grase/build-images:jessie
   script:
     - dpkg-buildpackage -aarmel -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
-  artifacts:
-    paths:
-      - artifacts/
-    expire_in: 1 week
