@@ -2,7 +2,7 @@
   stage: build
   script:
     - dch -v $(git describe --tags |tr '-' '.')~$(lsb_release -cs) -b ""
-    - dpkg-buildpackage -a$BUILD_ARCH
+    - dpkg-buildpackage -a$BUILD_ARCH -d
     - mkdir artifacts
     - mv -v ../coova-chilli_* artifacts/
   artifacts:
