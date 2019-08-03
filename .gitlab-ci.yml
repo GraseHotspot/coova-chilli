@@ -37,37 +37,36 @@ xenial-armhf:
   variables:
     BUILD_ARCH: armhf
 
-jessie-i386:
-  <<: *build_definition
-  image: grase/build-images:jessie
-  variables:
-    BUILD_ARCH: i386
-
-jessie-armhf:
-  <<: *build_definition
-  image: grase/build-images:jessie
-  variables:
-    BUILD_ARCH: armhf
-
-jessie-armel:
-  <<: *build_definition
-  image: grase/build-images:jessie
-  variables:
-    BUILD_ARCH: armel
+# jessie-i386:
+#   <<: *build_definition
+#   image: grase/build-images:jessie
+#   variables:
+#     BUILD_ARCH: i386
+#
+# jessie-armhf:
+#   <<: *build_definition
+#   image: grase/build-images:jessie
+#   variables:
+#     BUILD_ARCH: armhf
+#
+# jessie-armel:
+#   <<: *build_definition
+#   image: grase/build-images:jessie
+#   variables:
+#     BUILD_ARCH: armel
 
 bionic-php56-amd64:
   <<: *build_definition
   image: grase/build-images:bionic-php56
 
-bionic-php56-i386:
-  <<: *build_definition
-  image: grase/build-images:bionic-php56
-  variables:
-    BUILD_ARCH: i386
+# bionic-php56-i386:
+#   <<: *build_definition
+#   image: grase/build-images:bionic-php56
+#   variables:
+#     BUILD_ARCH: i386
 
 bionic-php56-armhf:
   <<: *build_definition
   image: grase/build-images:bionic-php56
   variables:
     BUILD_ARCH: armhf
-      
