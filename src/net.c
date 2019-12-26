@@ -1082,9 +1082,6 @@ int net_route(struct in_addr *dst, struct in_addr *gateway,
   close(fd);
   return 0;
 
-#elif defined(__sun__)
-  syslog(LOG_ERR, "%s: Could not set up routing on Solaris. Please add route manually.", strerror(errno));
-  return 0;
 #else
 #error  "Unknown platform!"
 #endif
@@ -1262,11 +1259,6 @@ int net_open_eth(net_interface *netif) {
     /* Let's make this non-blocking */
     ndelay_on(netif->fd);
     coe(netif->fd);
-
-    option = 1;
-    if (net_setsockopt(netif->fd, SOL_SOCKET, TCP_NODELAY,
-		       &option, sizeof(option)) < 0)
-      return -1;
 
     /* Enable reception and transmission of broadcast frames */
     option = 1;
