@@ -13,44 +13,48 @@
 variables:
   BUILD_ARCH: amd64
 
-jessie-amd64:
+bionic-amd64:
   <<: *build_definition
-  image: grase/build-images:jessie
+  image: grase/build-images:bionic
 
-trusty-amd64:
-  <<: *build_definition
-  image: grase/build-images:trusty
+# jessie-amd64:
+#   <<: *build_definition
+#   image: grase/build-images:jessie
 
-xenial-amd64:
-  <<: *build_definition
-  image: grase/build-images:xenial
+# trusty-amd64:
+#   <<: *build_definition
+#   image: grase/build-images:trusty
 
-xenial-i386:
-  <<: *build_definition
-  image: grase/build-images:xenial
-  variables:
-    BUILD_ARCH: i386
+# xenial-amd64:
+#   <<: *build_definition
+#   image: grase/build-images:xenial
 
-xenial-armhf:
-  <<: *build_definition
-  image: grase/build-images:xenial
-  variables:
-    BUILD_ARCH: armhf
+# xenial-i386:
+#   <<: *build_definition
+#   image: grase/build-images:xenial
+#   variables:
+#     BUILD_ARCH: i386
 
-jessie-i386:
-  <<: *build_definition
-  image: grase/build-images:jessie
-  variables:
-    BUILD_ARCH: i386
+# xenial-armhf:
+#   <<: *build_definition
+#   image: grase/build-images:xenial
+#   variables:
+#     BUILD_ARCH: armhf
 
-jessie-armhf:
-  <<: *build_definition
-  image: grase/build-images:jessie
-  variables:
-    BUILD_ARCH: armhf
+# jessie-i386:
+#   <<: *build_definition
+#   image: grase/build-images:jessie
+#   variables:
+#     BUILD_ARCH: i386
 
-jessie-armel:
-  <<: *build_definition
-  image: grase/build-images:jessie
-  variables:
-    BUILD_ARCH: armel
+# jessie-armhf:
+#   <<: *build_definition
+#   image: grase/build-images:jessie
+#   variables:
+#     BUILD_ARCH: armhf
+
+# jessie-armel:
+#   <<: *build_definition
+#   image: grase/build-images:jessie
+#   variables:
+#     BUILD_ARCH: armel
