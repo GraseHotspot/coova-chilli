@@ -130,6 +130,3 @@ debian/coova-chilli.prerm.debhelper
 debian/coova-chilli.substvars
 debian/coova-chilli/
 debian/files
-
-# Drone related ignores
-dronesecrets.yml
