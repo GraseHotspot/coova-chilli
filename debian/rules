@@ -61,6 +61,7 @@ binary-arch: build install
 	dh_testroot
 	dh_installdocs
 	dh_installexamples
+	dh_install
 	dh_installinit --name chilli
 	dh_installman
 	dh_installinfo

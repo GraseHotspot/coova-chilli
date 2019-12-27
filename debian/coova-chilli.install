@@ -1,4 +1,2 @@
-etc/
-usr/
 debian/extra_files/ipup.sh /etc/chilli/
 debian/extra_files/config /etc/chilli/
