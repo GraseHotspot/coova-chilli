@@ -1,5 +1,5 @@
 #!/bin/sh
-/etc/init.d/chilli stop
+invoke-rc.d chilli stop
 
 if [ "$1" = purge ]; then
     update-rc.d chilli remove
