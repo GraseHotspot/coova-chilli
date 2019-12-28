@@ -85,10 +85,10 @@ HS_UAMSERVER=$HS_UAMLISTEN
 #   Shell variable replacement takes place when evaluated, so here
 #   HS_UAMSERVER is escaped and later replaced by the pre-defined 
 #   HS_UAMSERVER to form the actual "--uamserver" option in chilli.
-HS_UAMFORMAT=http://\$HS_UAMSERVER/grase/uam/hotspot
+HS_UAMFORMAT=http://\$HS_UAMSERVER/grase/uam
 
 #   Same principal goes for HS_UAMHOMEPAGE.
-HS_UAMHOMEPAGE=http://\$HS_UAMSERVER/grase/uam/hotspot
+HS_UAMHOMEPAGE=http://\$HS_UAMSERVER/grase/uam
 
 #   This option will be configured to be the WISPr LoginURL as well
 #   as provide "uamService" to the ChilliController. The UAM Service is
@@ -197,7 +197,7 @@ HS_WWWBIN=/etc/chilli/wwwsh
 #   Some configurations used in certain user interfaces
 #
 HS_PROVIDER=Grase
-HS_PROVIDER_LINK=http://hotspot.purewhite.id.au/
+HS_PROVIDER_LINK=https://grasehotspot.org/
 
 
 ###
