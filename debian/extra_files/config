@@ -162,7 +162,7 @@ HS_MACAUTH=on		   # To turn on MAC Authentication
 # is to block all unwanted traffic to the tun/tap. 
 #
 # HS_TCP_PORTS="80 443"
-HS_TCP_PORTS="80 443 22 2812 53 3990 3128"
+HS_TCP_PORTS="80 443 22 53 3990"
 
 ###
 #   Standard configurations
